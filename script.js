@@ -2,15 +2,15 @@ let menuIcon = document.querySelector("#menu-icon");
 let navbar = document.querySelector(".navbar");
 // Image list
 let images = [
-  { src: "image1.jpg", description: "Image 1 Description" },
-  { src: "image2.jpg", description: "Image 2 Description" },
-  { src: "image3.jpg", description: "Image 3 Description" },
-  { src: "image4.jpg", description: "Image 4 Description" },
-  { src: "image3.jpg", description: "Image 5 Description" },
-  { src: "image6.jpg", description: "Image 6 Description" },
-  { src: "image7.jpg", description: "Image 7 Description" },
-  { src: "image8.jpg", description: "Image 8 Description" },
-  { src: "image9.jpg", description: "Image 9 Description" },
+  { src: "image1.jpg", description: "Happy me at TxE Summit 2023 Enugu." },
+  { src: "image2.jpg", description: "With a group of friends at Techflock 2022 Umuahi." },
+  { src: "image3.jpg", description: "Developing a mobile app at my space." },
+  { src: "image4.jpg", description: "My friends and I at GOtv event." },
+  { src: "image5.jpg", description: "Memory from my matriculation day." },
+  { src: "image6.jpg", description: "Studying for exams." },
+  { src: "image7.jpg", description: "Went to do solar installation with a Boss friend at Oyo." },
+  { src: "image8.jpg", description: "Enjoying the moment on a school tracktor." },
+  { src: "image9.jpg", description: "Participating in chemistry practical at my school lab, during my 100L days." },
 ];
 // current image index
 let currentIndex = 0;
@@ -31,17 +31,17 @@ function nextImage() {
   updateImage();
 }
 
-function updateImage() {
-  const img = document.createElement("img");
-  const imgwrapper = document.querySelector(".image-container");
-  imgwrapper.innerHTML = "";
-  img.src = images[currentIndex].src;
-  imgwrapper.appendChild(img);
-  document.querySelector(".image-description").textContent = images[currentIndex].description;
-}
 // function updateImage() {
-//     const img = document.createElement('img')
-//   document.querySelector(".image-container img").src = images[currentIndex].src;
+//   const img = document.createElement("img");
+//   const imgwrapper = document.querySelector(".image-container");
+//   imgwrapper.innerHTML = "";
+//   img.src = images[currentIndex].src;
+//   imgwrapper.appendChild(img);
 //   document.querySelector(".image-description").textContent = images[currentIndex].description;
 // }
+function updateImage() {
+    const img = document.createElement('img')
+  document.querySelector(".image-container img").src = images[currentIndex].src;
+  document.querySelector(".image-description").textContent = images[currentIndex].description;
+}
 updateImage();
