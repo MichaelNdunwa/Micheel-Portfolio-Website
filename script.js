@@ -36,7 +36,16 @@ function nextImage() {
 }
 
 function updateImage() {
-  document.querySelector(".image-container img").src = images[currentIndex].src;
+    const img = document.createElement('img')
+ const imgwrapper =  document.querySelector(".image-container")
+ imgwrapper.innerHTML = ''
+ img.src = images[currentIndex].src
+imgwrapper.appendChild(img)
   document.querySelector(".image-description").textContent = images[currentIndex].description;
 }
+// function updateImage() {
+//     const img = document.createElement('img')
+//   document.querySelector(".image-container img").src = images[currentIndex].src;
+//   document.querySelector(".image-description").textContent = images[currentIndex].description;
+// }
 updateImage();
