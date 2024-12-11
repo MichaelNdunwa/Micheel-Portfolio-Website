@@ -6,9 +6,10 @@
     <title>Single Page Portfolio Website</title>
     <link rel="stylesheet" href="style.css" />
     <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
+    href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+    rel="stylesheet"
     />
+    
   </head>
   <body>
     <header class="header">
@@ -22,9 +23,11 @@
         <a href="#life-style">Life Style</a>
         <a href="#mail">Mail</a>
       </nav>
-      <a href="https://wa.link/rn52f1"><button class="gradient-btn">
+      <a href="https://wa.link/rn52f1"
+        ><button class="gradient-btn">
           <i class="bx bxl-whatsapp"></i> Contact Me
-        </button></a>
+        </button></a
+      >
     </header>
     <section class="home" id="home">
       <div class="home-content">
@@ -209,18 +212,84 @@
 
       <div class="image-card">
         <div class="image-container">
-          <img src="michael.jpg" alt="Image 1">
+          <img src="michael.jpg" alt="Image 1" />
           <p class="image-description">Image 1 Description</p>
         </div>
         <div class="navigation-arrows">
           <!-- <button class="prev-arrow" onclick="prevImage()">&lt;</button>
           <button class="next-arrow" onclick="nextImage()">&gt;</button> -->
 
-          <button class="prev-arrow" onclick="prevImage()"><i class='bx bxs-left-arrow'></i></button>
-          <button class="next-arrow" onclick="nextImage()"><i class='bx bxs-right-arrow' ></i></button>
+          <button class="prev-arrow" onclick="prevImage()">
+            <i class="bx bxs-left-arrow"></i>
+          </button>
+          <button class="next-arrow" onclick="nextImage()">
+            <i class="bx bxs-right-arrow"></i>
+          </button>
         </div>
       </div>
     </section>
+    <!-- new -->
+
+    <div class="slideshow-container">
+
+      <div class="mySlides fade">
+        <div class="numbertext">1 / 3</div>
+        <img src="michael.jpg" style="width:100%">
+        <div class="text">Caption Text</div>
+      </div>
+      
+      <div class="mySlides fade">
+        <div class="numbertext">2 / 3</div>
+        <img src="image2.jpg" style="width:100%">
+        <div class="text">Caption Two</div>
+      </div>
+      
+      <div class="mySlides fade">
+        <div class="numbertext">3 / 3</div>
+        <img src="image1.jpg" style="width:100%">
+        <div class="text">Caption Three</div>
+      </div>
+      
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <a class="next" onclick="plusSlides(1)">❯</a>
+      
+      </div>
+      <br>
+      
+      <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span> 
+        <span class="dot" onclick="currentSlide(2)"></span> 
+        <span class="dot" onclick="currentSlide(3)"></span> 
+      </div>
+      
+      <script>
+      let slideIndex = 1;
+      showSlides(slideIndex);
+      
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+      
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+      
+      function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+      }
+      </script>
 
     <!-- Mail -->
     <section class="mail" id="mail">
@@ -279,6 +348,7 @@
 
       <p class="copyright">©️ Michael Ndunwa | All Rights Reserved</p>
     </footer>
+   
     <script src="script.js"></script>
   </body>
 </html>
