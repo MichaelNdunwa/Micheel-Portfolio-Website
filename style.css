@@ -514,7 +514,7 @@ section {
   }
   .about h2 {
     text-align: center;
-    margin: 2rem 0;
+    /* margin: 2rem 0; */
   }
   .about img {
     width: 52vw;
